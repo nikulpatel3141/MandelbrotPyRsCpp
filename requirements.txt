@@ -1,0 +1,2 @@
+maturin==1.7
+pybind==2.13

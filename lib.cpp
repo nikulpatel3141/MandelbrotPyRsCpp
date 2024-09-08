@@ -11,8 +11,8 @@ int calc_escape_iter(const std::complex<double> &c, const int &max_iter) {
   std::complex<double> z = 0;
   int iter = 0;
 
-  while ((std::pow(c.imag(), 2) + std::pow(c.real(), 2)) < 4 &&
-         ++iter < max_iter) {
+  while (((std::pow(z.imag(), 2) + std::pow(z.real(), 2)) < 4) &&
+         (++iter < max_iter)) {
     z = std::pow(z, 2) + c;
   }
   return iter;
@@ -32,7 +32,7 @@ std::vector<int> generate_mandelbrot(double x_min, double x_max, double y_min,
   for (auto x = 0; x < n_steps; ++x) {
     for (auto y = 0; y < n_steps; ++y) {
       auto z = std::complex<double>(_map_iter(x, x_min, x_max),
-                                    _map_iter(x, y_min, y_max));
+                                    _map_iter(y, y_min, y_max));
       result[i++] = calc_escape_iter(z, max_iter);
     }
   }

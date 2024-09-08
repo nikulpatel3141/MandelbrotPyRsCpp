@@ -6,7 +6,7 @@ edition = "2021"
 [lib]
 name = "mandelbrot_rs"
 crate-type = ["cdylib"]
-path = "src/lib.rs"
+path = "lib.rs"
 
 [dependencies]
 num = "0.4.3"
